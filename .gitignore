@@ -30,3 +30,19 @@
 *.exe
 *.out
 *.app
+
+# Build results
+[Bb]uild/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# VS
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
