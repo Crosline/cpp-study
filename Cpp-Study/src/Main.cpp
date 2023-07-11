@@ -12,6 +12,25 @@ struct Vector2 {
 
 	Vector2(const Vector2& other)
 		: x(other.x), y(other.y) { }
+
+	Vector2 operator+(const Vector2& other) {
+		return Add(other);
+	}
+	Vector2 Add(const Vector2& other) {
+		return Vector2(x + other.x, y + other.y);
+	}
+
+	Vector2 operator*(const Vector2& other) {
+		return Add(other);
+	}
+
+	Vector2 Multiply(const Vector2& other) {
+		return Vector2(x * other.x, y * other.y);
+	}
+
+	Vector2 operator*(const float& number) {
+		return Vector2(x * number, y * number);
+	}
 };
 
 
