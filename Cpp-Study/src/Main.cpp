@@ -19,11 +19,11 @@ int main() {
 
 	{
 
-		std::shared_ptr<Vector2> test;
+		std::unique_ptr<Vector2> test;
 
 		{
 
-			test = std::make_shared<Vector2>(1, 2);
+			test = std::make_unique<Vector2>(1, 2);
 
 			std::cout << test.get() << std::endl;
 		}
