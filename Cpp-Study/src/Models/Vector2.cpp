@@ -10,6 +10,8 @@ Vector2::Vector2(float x, float y)
 Vector2::Vector2(const Vector2& other)
 	: x(other.x), y(other.y) { }
 
+Vector2::~Vector2() { }
+
 Vector2 Vector2::operator+(const Vector2& other) {
 	return Add(other);
 }
@@ -41,4 +43,8 @@ bool Vector2::operator!=(const Vector2& other) {
 std::ostream& operator<<(std::ostream& stream, const Vector2& vec2) {
 	stream << vec2.x << ", " << vec2.y;
 	return stream;
+}
+
+std::ostream& operator<<(std::ostream& stream, const Vector2* vec2) {
+	return operator<<(stream, *vec2);
 }
