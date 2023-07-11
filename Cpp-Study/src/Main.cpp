@@ -28,12 +28,12 @@ int main() {
 			std::cout << test.get() << std::endl;
 		}
 
+		std::cout << test.get() << std::endl;
+	}
 		long xoffset = (long)&((Vector2*)nullptr)->x;
 		long yoffset = (long)&((Vector2*)nullptr)->y;
 
-		std::cout << test.get() << std::endl;
 		std::cout << xoffset << " : " << yoffset << std::endl;
-	}
 
 	std::cout <<  smallString.contains("es") << std::endl;
 	std::cout <<  smallString.contains(String("test")) << std::endl;
