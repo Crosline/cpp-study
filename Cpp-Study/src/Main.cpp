@@ -31,6 +31,15 @@ struct Vector2 {
 	Vector2 operator*(const float& number) {
 		return Vector2(x * number, y * number);
 	}
+
+	bool operator==(const Vector2& other) {
+		const double eps = 0.00001;
+		return fabs(x - other.x) < eps && fabs(y - other.y) < eps;
+	}
+
+	bool operator!=(const Vector2& other) {
+		return !(operator==(other));
+	}
 };
 
 
