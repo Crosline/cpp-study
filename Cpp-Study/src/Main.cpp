@@ -15,7 +15,7 @@ int main() {
 
 	Vector2 test = Vector2(3, 5) + Vector2(1, 2);
 
-	std::cout << test.x << " : " << test.y;
+	std::cout << test;
 
 	std::cin.get();
 

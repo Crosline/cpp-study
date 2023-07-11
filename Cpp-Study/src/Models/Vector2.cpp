@@ -1,4 +1,4 @@
-#include <cmath>
+#include <iostream>
 #include "Vector2.h"
 
 Vector2::Vector2()
@@ -36,4 +36,9 @@ bool Vector2::operator==(const Vector2& other) {
 
 bool Vector2::operator!=(const Vector2& other) {
 	return !(operator==(other));
+}
+
+std::ostream& operator<<(std::ostream& stream, const Vector2& vec2) {
+	stream << vec2.x << ", " << vec2.y;
+	return stream;
 }

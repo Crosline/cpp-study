@@ -21,4 +21,6 @@ struct Vector2 {
 	bool operator==(const Vector2& other);
 
 	bool operator!=(const Vector2& other);
+
+	friend std::ostream& operator<<(std::ostream& stream, const Vector2& vec2);
 };
