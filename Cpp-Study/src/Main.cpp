@@ -8,6 +8,14 @@
 #include <GLFW/glfw3.h>
 
 // extern "C" int glfwInit();
+template<typename T, int N>
+struct Array {
+	T contents[N];
+
+	int Size() {
+		return N;
+	}
+};
 
 
 inline int Multiply(int a, int b) {
@@ -28,6 +36,19 @@ int main() {
 	for (std::vector<std::string>::iterator it = strings.begin(); it != strings.end(); it++) {
 		std::cout << *it << std::endl;
 	}
+
+	Array<int, 5> myLittelArray;
+
+	for (int i = 0; i < myLittelArray.Size(); i++)
+	{
+		myLittelArray.contents[i] = i * i;
+	}
+
+	for (auto content : myLittelArray.contents)
+	{
+		std::cout << content << "\t";
+	}
+	std::cout << std::endl;
 
 	int a = Multiply(3, 5);
 
