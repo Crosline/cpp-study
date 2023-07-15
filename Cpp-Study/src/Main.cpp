@@ -1,6 +1,8 @@
 #include "Log.h"
 #include <iostream>
 #include <string>
+#include <vector>
+#include <unordered_map>
 #include "Models/Vector2.h"
 #include "Models/String.h"
 #include <GLFW/glfw3.h>
@@ -17,6 +19,15 @@ int main() {
 	std::string hw = std::string("hello world");
 
 	String smallString = "test";
+
+	std::vector <std::string> strings;
+
+	strings.emplace_back("Apple");
+	strings.emplace_back("Banana");
+
+	for (std::vector<std::string>::iterator it = strings.begin(); it != strings.end(); it++) {
+		std::cout << *it << std::endl;
+	}
 
 	int a = Multiply(3, 5);
 
