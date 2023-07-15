@@ -3,6 +3,9 @@
 #include <string>
 #include "Models/Vector2.h"
 #include "Models/String.h"
+#include <GLFW/glfw3.h>
+
+// extern "C" int glfwInit();
 
 
 inline int Multiply(int a, int b) {
@@ -40,6 +43,8 @@ int main() {
 	std::cout << smallString << std::endl;
 
 	std::cin.get();
+
+	int gInit = glfwInit();
 
 	return 0;
 }
