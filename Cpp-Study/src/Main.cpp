@@ -7,6 +7,12 @@
 #include "Models/String.h"
 #include <GLFW/glfw3.h>
 
+#ifdef _DEBUG
+#define LOG(x) std::cout << x << std::endl
+#else
+#define LOG(x)
+#endif
+
 // extern "C" int glfwInit();
 template<typename T, int N>
 struct Array {
@@ -73,7 +79,7 @@ int main() {
 
 	std::cout <<  smallString.contains("es") << std::endl;
 	std::cout <<  smallString.contains(String("test")) << std::endl;
-	std::cout << smallString << std::endl;
+	LOG(smallString);
 
 	std::cin.get();
 
