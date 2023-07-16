@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <array>
 #include <unordered_map>
 #include "Models/Vector2.h"
 #include "Models/String.h"
@@ -24,7 +25,7 @@ struct Array {
 };
 
 
-inline int Multiply(int a, int b) {
+inline const int Multiply(const int a, const int b) {
 	return a * b;
 }
 
@@ -42,6 +43,10 @@ int main() {
 	for (std::vector<std::string>::iterator it = strings.begin(); it != strings.end(); it++) {
 		std::cout << *it << std::endl;
 	}
+
+	std::array<int, 5> datarray; // Why we should use std array instead of other arrays?
+	datarray[0] = 5;
+	datarray[1] = 2;
 
 	Array<int, 5> myLittelArray;
 
