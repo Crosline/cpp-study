@@ -61,7 +61,19 @@ int main() {
 	}
 	std::cout << std::endl;
 
-	int a = Multiply(3, 5);
+	{
+		typedef const int(*multiplyFunction)(int, int);
+
+		multiplyFunction mul = Multiply;
+
+		int a = mul(3, 5);
+	}
+
+	{
+		auto v = [](int value) { std::cout << value << std::endl; };
+
+		v(5);
+	}
 
 	{
 
