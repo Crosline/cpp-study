@@ -35,11 +35,16 @@ inline const int Multiply(const int a, const int b) {
 
 static bool s_isWorking = true;
 void ThreadTest() {
-	using namespace std::chrono_literals;
-	while (s_isWorking)
+	while (true)
 	{
-		std::cout << "Working" << std::endl;
-		std::this_thread::sleep_for(5s);
+		std::string p;
+		std::cin >> p;
+
+		if (p._Equal("exit"))
+		{
+			s_isWorking = false;
+			break;
+		}
 	}
 }
 
@@ -112,9 +117,6 @@ int main() {
 	std::cout <<  smallString.contains(String("test")) << std::endl;
 	LOG(smallString);
 
-	std::cin.get();
-
-	s_isWorking = false;
 	worker.join();
 
 	int gInit = glfwInit();
