@@ -5,6 +5,7 @@
 #include <array>
 #include <functional>
 #include <unordered_map>
+#include <thread>
 #include "Models/Vector2.h"
 #include "Models/String.h"
 #include <GLFW/glfw3.h>
@@ -14,6 +15,8 @@
 #else
 #define LOG(x)
 #endif
+
+using namespace CppStudy;
 
 // extern "C" int glfwInit();
 template<typename T, int N>
@@ -30,7 +33,19 @@ inline const int Multiply(const int a, const int b) {
 	return a * b;
 }
 
+static bool s_isWorking = true;
+void ThreadTest() {
+	using namespace std::chrono_literals;
+	while (s_isWorking)
+	{
+		std::cout << "Working" << std::endl;
+		std::this_thread::sleep_for(5s);
+	}
+}
+
 int main() {
+
+	std::thread worker(ThreadTest);
 
 	std::string hw = std::string("hello world");
 
@@ -98,6 +113,9 @@ int main() {
 	LOG(smallString);
 
 	std::cin.get();
+
+	s_isWorking = false;
+	worker.join();
 
 	int gInit = glfwInit();
 
