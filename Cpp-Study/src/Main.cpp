@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <functional>
 #include <unordered_map>
 #include "Models/Vector2.h"
 #include "Models/String.h"
@@ -62,17 +63,15 @@ int main() {
 	std::cout << std::endl;
 
 	{
-		typedef const int(*multiplyFunction)(int, int);
+		//typedef const int(*multiplyFunction)(int, int);
+		typedef const std::function<int(int, int)> multiplyFunction;
 
 		multiplyFunction mul = Multiply;
 
 		int a = mul(3, 5);
-	}
-
-	{
-		auto v = [](int value) { std::cout << value << std::endl; };
-
+		auto v = [datarray](int value) { std::cout << value << std::endl; };
 		v(5);
+		v(a);
 	}
 
 	{
