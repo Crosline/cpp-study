@@ -6,6 +6,7 @@
 #include <functional>
 #include <unordered_map>
 #include <thread>
+#include <chrono>
 #include "Models/Vector2.h"
 #include "Models/String.h"
 #include <GLFW/glfw3.h>
@@ -27,6 +28,34 @@ struct Array {
 		return N;
 	}
 };
+
+struct Benchmark
+{
+	std::chrono::time_point<std::chrono::steady_clock> start;
+
+	void Start() {
+		start = std::chrono::high_resolution_clock::now();
+
+	}
+
+	float End() {
+		std::chrono::duration<float> duration = std::chrono::high_resolution_clock::now() - start;
+		float ms = duration.count() * 1000.0f;
+		return ms;
+	}
+};
+
+inline void HelloWorld() {
+	Benchmark b;
+	b.Start();
+	for (int i = 0; i < 1000; i++)
+	{
+		std::cout << "Hello World\n";
+	}
+
+	float ms = b.End();
+	std::cout << "Benchmark took " << ms << "ms" << std::endl;
+}
 
 
 inline const int Multiply(const int a, const int b) {
