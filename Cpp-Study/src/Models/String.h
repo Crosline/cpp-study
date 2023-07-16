@@ -1,26 +1,28 @@
 #pragma once
 #include <string>
 
-class String {
-private:
-	char* m_Buffer;
-	size_t m_Size;
-	
-	bool isCopy;
-public:
-	String(const char* string);
+namespace CppStudy {
+	class String {
+	private:
+		char* m_Buffer;
+		size_t m_Size;
 
-	String(const std::string string) = delete;
+		bool isCopy;
+	public:
+		String(const char* string);
 
-	String(const String& other);
+		String(const std::string string) = delete;
 
-	~String();
+		String(const String& other);
 
-	bool contains(const String& other);
+		~String();
 
-	bool contains(const char* buffer);
+		bool contains(const String& other);
 
-	char& operator[](unsigned int index);
+		bool contains(const char* buffer);
 
-	friend std::ostream& operator<<(std::ostream& stream, const String& string);
-};
+		char& operator[](unsigned int index);
+
+		friend std::ostream& operator<<(std::ostream& stream, const String& string);
+	};
+}
