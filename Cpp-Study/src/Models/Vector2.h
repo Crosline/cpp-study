@@ -28,5 +28,10 @@ namespace CppStudy {
 		friend std::ostream& operator<<(std::ostream& stream, const Vector2& vec2);
 
 		friend std::ostream& operator<<(std::ostream& stream, const Vector2* vec2);
+
+		const static Vector2 up;
+		const static Vector2 down;
+		const static Vector2 forward;
+		const static Vector2 back;
 	};
 }

@@ -50,4 +50,8 @@ namespace CppStudy {
 	std::ostream& operator<<(std::ostream& stream, const Vector2* vec2) {
 		return operator<<(stream, *vec2);
 	}
+	const Vector2 Vector2::up = { 0, 1 };
+	const Vector2 Vector2::down = { 0, -1 };
+	const Vector2 Vector2::forward = { 1, 0 };
+	const Vector2 Vector2::back = { -1, 0 };
 }
